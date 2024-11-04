@@ -16,7 +16,11 @@ const LoginPage = () => {
     const role = user?.publicMetadata.role;
 
     if (role) {
+       console.log('User role:', role);
       router.push(`/${role}`);
+    } else {
+      console.log('User role is undefined or invalid. Redirecting to default route.');
+      router.push('/default-route');
     }
   }, [user, router]);
 
